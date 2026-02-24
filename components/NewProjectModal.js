@@ -2,17 +2,17 @@
 import { useState } from "react";
 
 const CATEGORIES = [
-  { key: "pessoal", label: "\uD83C\uDFE0 Pessoal" },
-  { key: "trabalho", label: "\uD83D\uDCBC Trabalho" },
-  { key: "estudo", label: "\uD83D\uDCDA Estudo" },
-  { key: "freelance", label: "\uD83D\uDCB0 Freelance" },
+  { key: "pessoal", label: "🏠 Pessoal" },
+  { key: "trabalho", label: "💼 Trabalho" },
+  { key: "estudo", label: "📚 Estudo" },
+  { key: "freelance", label: "💰 Freelance" },
 ];
 
 const PRIORITIES = [
-  { key: "urgente", label: "\uD83D\uDD34 Urgente" },
-  { key: "alta", label: "\uD83D\uDFE0 Alta" },
-  { key: "media", label: "\uD83D\uDFE1 M\u00E9dia" },
-  { key: "baixa", label: "\uD83D\uDFE2 Baixa" },
+  { key: "urgente", label: "🔴 Urgente" },
+  { key: "alta", label: "🟠 Alta" },
+  { key: "media", label: "🟡 Média" },
+  { key: "baixa", label: "🟢 Baixa" },
 ];
 
 const COLORS = ["#6366f1", "#3b82f6", "#06b6d4", "#10b981", "#f59e0b", "#ef4444", "#ec4899", "#8b5cf6"];
@@ -48,7 +48,7 @@ export default function NewProjectModal({ onClose, onSave }) {
       onClick={onClose}>
       <div onClick={(e) => e.stopPropagation()}
         className="bg-white rounded-2xl w-full max-w-md p-6 shadow-2xl">
-        <h2 className="text-xl font-bold text-slate-800 mb-5">\u2728 Novo Projeto</h2>
+        <h2 className="text-xl font-bold text-slate-800 mb-5">✨ Novo Projeto</h2>
 
         <div className="space-y-4">
           <div>
@@ -59,9 +59,9 @@ export default function NewProjectModal({ onClose, onSave }) {
           </div>
 
           <div>
-            <label className="text-xs font-bold text-slate-500 block mb-1">Descri\u00E7\u00E3o</label>
+            <label className="text-xs font-bold text-slate-500 block mb-1">Descrição</label>
             <input value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })}
-              placeholder="Breve descri\u00E7\u00E3o..."
+              placeholder="Breve descrição..."
               className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm outline-none focus:border-indigo-400" />
           </div>
 
@@ -103,7 +103,7 @@ export default function NewProjectModal({ onClose, onSave }) {
           </div>
 
           <div>
-            <label className="text-xs font-bold text-slate-500 block mb-1">\uD83E\uDDE0 Contexto inicial (opcional)</label>
+            <label className="text-xs font-bold text-slate-500 block mb-1">🧠 Contexto inicial (opcional)</label>
             <input value={form.context_note} onChange={(e) => setForm({ ...form, context_note: e.target.value })}
               placeholder="Ex: Preciso primeiro fazer X, depois Y..."
               className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm outline-none focus:border-indigo-400" />
