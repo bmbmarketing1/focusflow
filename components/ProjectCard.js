@@ -1,24 +1,24 @@
 "use client";
 
 const CATEGORIES = {
-  trabalho: { label: "Trabalho", emoji: "\uD83D\uDCBC", color: "#3b82f6" },
-  pessoal: { label: "Pessoal", emoji: "\uD83C\uDFE0", color: "#8b5cf6" },
-  estudo: { label: "Estudo", emoji: "\uD83D\uDCDA", color: "#06b6d4" },
-  freelance: { label: "Freelance", emoji: "\uD83D\uDCB0", color: "#f59e0b" },
+  trabalho: { label: "Trabalho", emoji: "💼", color: "#3b82f6" },
+  pessoal: { label: "Pessoal", emoji: "🏠", color: "#8b5cf6" },
+  estudo: { label: "Estudo", emoji: "📚", color: "#06b6d4" },
+  freelance: { label: "Freelance", emoji: "💰", color: "#f59e0b" },
 };
 
 const STATUS_CONFIG = {
   ativo: { label: "Ativo", color: "#22c55e", bg: "#dcfce7" },
   pausado: { label: "Pausado", color: "#f59e0b", bg: "#fef3c7" },
-  concluido: { label: "Conclu\u00EDdo", color: "#6366f1", bg: "#e0e7ff" },
+  concluido: { label: "Concluído", color: "#6366f1", bg: "#e0e7ff" },
   arquivado: { label: "Arquivado", color: "#94a3b8", bg: "#f1f5f9" },
 };
 
 const PRIORITY_CONFIG = {
-  urgente: { label: "\uD83D\uDD34 Urgente" },
-  alta: { label: "\uD83D\uDFE0 Alta" },
-  media: { label: "\uD83D\uDFE1 M\u00E9dia" },
-  baixa: { label: "\uD83D\uDFE2 Baixa" },
+  urgente: { label: "🔴 Urgente" },
+  alta: { label: "🟠 Alta" },
+  media: { label: "🟡 Média" },
+  baixa: { label: "🟢 Baixa" },
 };
 
 function daysUntil(dateStr) {
@@ -31,11 +31,11 @@ function DeadlineBadge({ deadline }) {
   if (days === null) return <span className="text-slate-400 text-xs">Sem prazo</span>;
   let color = "#22c55e", bg = "#dcfce7", text = `${days}d restantes`;
   if (days < 0) { color = "#ef4444"; bg = "#fee2e2"; text = `${Math.abs(days)}d atrasado!`; }
-  else if (days <= 3) { color = "#ef4444"; bg = "#fee2e2"; text = days === 0 ? "HOJE!" : `${days}d \u2014 corre!`; }
+  else if (days <= 3) { color = "#ef4444"; bg = "#fee2e2"; text = days === 0 ? "HOJE!" : `${days}d — corre!`; }
   else if (days <= 7) { color = "#f59e0b"; bg = "#fef3c7"; }
   return (
     <span style={{ background: bg, color, padding: "2px 8px", borderRadius: 12, fontSize: 11, fontWeight: 600 }}>
-      \u23F0 {text}
+      ⏰ {text}
     </span>
   );
 }
@@ -85,7 +85,7 @@ export default function ProjectCard({ project, onClick }) {
 
       <div className="flex justify-between items-center">
         <span className="text-xs text-slate-400">
-          {project.context_note ? "\uD83E\uDDE0 Tem nota de contexto" : ""}
+          {project.context_note ? "🧠 Tem nota de contexto" : ""}
         </span>
         <DeadlineBadge deadline={project.deadline} />
       </div>
