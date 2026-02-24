@@ -6,10 +6,10 @@ import ProjectModal from "./ProjectModal";
 import NewProjectModal from "./NewProjectModal";
 
 const CATEGORIES = {
-  trabalho: { label: "Trabalho", emoji: "\uD83D\uDCBC", color: "#3b82f6" },
-  pessoal: { label: "Pessoal", emoji: "\uD83C\uDFE0", color: "#8b5cf6" },
-  estudo: { label: "Estudo", emoji: "\uD83D\uDCDA", color: "#06b6d4" },
-  freelance: { label: "Freelance", emoji: "\uD83D\uDCB0", color: "#f59e0b" },
+  trabalho: { label: "Trabalho", emoji: "💼", color: "#3b82f6" },
+  pessoal: { label: "Pessoal", emoji: "🏠", color: "#8b5cf6" },
+  estudo: { label: "Estudo", emoji: "📚", color: "#06b6d4" },
+  freelance: { label: "Freelance", emoji: "💰", color: "#f59e0b" },
 };
 
 const PRIORITY_WEIGHT = { urgente: 4, alta: 3, media: 2, baixa: 1 };
@@ -25,10 +25,10 @@ function StatsBar({ projects }) {
   const dueSoon = projects.filter((p) => { const d = daysUntil(p.deadline); return d !== null && d >= 0 && d <= 3 && p.status === "ativo"; }).length;
 
   const stats = [
-    { label: "Ativos", value: active, color: "#22c55e", icon: "\uD83D\uDE80" },
-    { label: "Atrasados", value: overdue, color: "#ef4444", icon: "\uD83D\uDEA8" },
-    { label: "Vence logo", value: dueSoon, color: "#f59e0b", icon: "\u23F0" },
-    { label: "Total", value: projects.length, color: "#6366f1", icon: "\uD83D\uDCCA" },
+    { label: "Ativos", value: active, color: "#22c55e", icon: "🚀" },
+    { label: "Atrasados", value: overdue, color: "#ef4444", icon: "🚨" },
+    { label: "Vence logo", value: dueSoon, color: "#f59e0b", icon: "⏰" },
+    { label: "Total", value: projects.length, color: "#6366f1", icon: "📊" },
   ];
 
   return (
@@ -79,7 +79,7 @@ export default function Dashboard({ user, onSignOut }) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="text-4xl mb-4 animate-bounce">\u26A1</div>
+          <div className="text-4xl mb-4 animate-bounce">⚡</div>
           <p className="text-slate-500 text-sm">Carregando projetos...</p>
         </div>
       </div>
@@ -92,9 +92,9 @@ export default function Dashboard({ user, onSignOut }) {
         <div className="max-w-4xl mx-auto px-5 py-6">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-2xl font-extrabold tracking-tight">\u26A1 FocusFlow</h1>
+              <h1 className="text-2xl font-extrabold tracking-tight">⚡ FocusFlow</h1>
               <p className="text-sm opacity-80 mt-1">
-                Ol\u00E1, {user.email?.split("@")[0]}! Seus projetos num lugar s\u00F3.
+                Olá, {user.email?.split("@")[0]}! Seus projetos num lugar só.
               </p>
             </div>
             <div className="flex gap-2 items-center">
@@ -111,7 +111,7 @@ export default function Dashboard({ user, onSignOut }) {
 
           {overdueProjects.length > 0 && (
             <div className="mt-3 bg-red-500/20 border border-red-400/30 rounded-xl px-4 py-2 text-sm">
-              \uD83D\uDEA8 <strong>Aten\u00E7\u00E3o!</strong> {overdueProjects.length} projeto(s) atrasado(s):{" "}
+              🚨 <strong>Atenção!</strong> {overdueProjects.length} projeto(s) atrasado(s):{" "}
               {overdueProjects.map((p) => p.title).join(", ")}
             </div>
           )}
@@ -125,9 +125,9 @@ export default function Dashboard({ user, onSignOut }) {
           <div className="flex flex-wrap gap-1.5">
             {[
               { key: "todos", label: "Todos" },
-              { key: "ativo", label: "\uD83D\uDFE2 Ativos" },
-              { key: "pausado", label: "\u23F8 Pausados" },
-              { key: "concluido", label: "\u2705 Conclu\u00EDdos" },
+              { key: "ativo", label: "🟢 Ativos" },
+              { key: "pausado", label: "⏸ Pausados" },
+              { key: "concluido", label: "✅ Concluídos" },
             ].map((f) => (
               <button key={f.key} onClick={() => setFilter(f.key)}
                 className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
@@ -165,7 +165,7 @@ export default function Dashboard({ user, onSignOut }) {
         {filtered.length === 0 && (
           <div className="text-center py-16 text-slate-400">
             <div className="text-5xl mb-3">
-              {projects.length === 0 ? "\u2728" : "\uD83D\uDD0D"}
+              {projects.length === 0 ? "✨" : "🔍"}
             </div>
             <p className="text-base">
               {projects.length === 0
@@ -202,4 +202,4 @@ export default function Dashboard({ user, onSignOut }) {
       )}
     </div>
   );
-}
+                }
