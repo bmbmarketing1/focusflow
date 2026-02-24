@@ -56,7 +56,7 @@ export default function ProjectModal({ project, userId, onClose, onUpdate, onDel
       <div onClick={(e) => e.stopPropagation()}
         className="bg-white rounded-2xl w-full max-w-xl max-h-[85vh] overflow-auto shadow-2xl">
 
-        <div className="p-5 border-b border-slate-100" style={{ borderLeft: \`5px solid \${color}\` }}>
+        <div className="p-5 border-b border-slate-100" style={{ borderLeft: `5px solid ${color}` }}>
           <div className="flex justify-between items-start">
             <div className="flex-1">
               <div className="flex gap-1.5 flex-wrap mb-2">
@@ -76,11 +76,11 @@ export default function ProjectModal({ project, userId, onClose, onUpdate, onDel
           <div className="flex gap-1.5 mt-3 flex-wrap">
             {STATUS_OPTIONS.map((s) => (
               <button key={s.key} onClick={() => handleStatusChange(s.key)}
-                className={\`px-3 py-1 rounded-full text-xs font-semibold border transition-all cursor-pointer \${
+                className={`px-3 py-1 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
                   project.status === s.key
                     ? "border-indigo-500 bg-indigo-50 text-indigo-700"
                     : "border-slate-200 bg-white text-slate-500 hover:border-slate-300"
-                }\`}>
+                }`}>
                 {s.label}
               </button>
             ))}
@@ -89,7 +89,7 @@ export default function ProjectModal({ project, userId, onClose, onUpdate, onDel
           <div className="mt-3">
             <div className="flex-1 bg-slate-100 rounded-full h-2 overflow-hidden">
               <div className="h-full rounded-full transition-all duration-500"
-                style={{ width: \`\${project.progress}%\`, background: color }} />
+                style={{ width: `${project.progress}%`, background: color }} />
             </div>
             <div className="text-xs text-slate-400 mt-1">{project.progress}% completo</div>
           </div>
@@ -122,15 +122,15 @@ export default function ProjectModal({ project, userId, onClose, onUpdate, onDel
 
         <div className="flex border-b border-slate-100">
           {[
-            { key: "tasks", label: \`✅ Tarefas (\${tasks.length})\` },
-            { key: "notes", label: \`📝 Notas (\${notes.length})\` },
+            { key: "tasks", label: `✅ Tarefas (${tasks.length})` },
+            { key: "notes", label: `📝 Notas (${notes.length})` },
           ].map((t) => (
             <button key={t.key} onClick={() => setTab(t.key)}
               className="flex-1 py-3 text-xs font-semibold border-none cursor-pointer transition-all"
               style={{
                 background: tab === t.key ? "#f8fafc" : "#fff",
                 color: tab === t.key ? color : "#94a3b8",
-                borderBottom: tab === t.key ? \`2px solid \${color}\` : "2px solid transparent",
+                borderBottom: tab === t.key ? `2px solid ${color}` : "2px solid transparent",
               }}>
               {t.label}
             </button>
@@ -158,7 +158,7 @@ export default function ProjectModal({ project, userId, onClose, onUpdate, onDel
                       }}>
                       {task.completed && <span className="text-white text-xs">✓</span>}
                     </div>
-                    <span className={\`text-sm flex-1 \${task.completed ? "text-slate-400 line-through" : "text-slate-700"}\`}>
+                    <span className={`text-sm flex-1 ${task.completed ? "text-slate-400 line-through" : "text-slate-700"}`}>
                       {task.title}
                     </span>
                     <button onClick={() => deleteTask(task.id)}
@@ -185,7 +185,7 @@ export default function ProjectModal({ project, userId, onClose, onUpdate, onDel
               </div>
               <div className="space-y-2">
                 {notes.map((note) => (
-                  <div key={note.id} className="bg-slate-50 rounded-lg p-3 group" style={{ borderLeft: \`3px solid \${color}\` }}>
+                  <div key={note.id} className="bg-slate-50 rounded-lg p-3 group" style={{ borderLeft: `3px solid ${color}` }}>
                     <div className="flex justify-between">
                       <p className="text-sm text-slate-700 m-0">{note.content}</p>
                       <button onClick={() => deleteNote(note.id)}
