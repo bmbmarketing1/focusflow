@@ -27,11 +27,11 @@ export default function LoginScreen({ onGoogleLogin, onEmailLogin, onEmailSignUp
       style={{ background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%)" }}>
       <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="text-5xl mb-3">\u26A1</div>
+          <div className="text-5xl mb-3">⚡</div>
           <h1 className="text-3xl font-extrabold text-slate-800 tracking-tight">FocusFlow</h1>
           <p className="text-slate-500 mt-2 text-sm">
             Organize seus projetos sem perder o foco.<br />
-            Feito pra quem tem mil coisas na cabe\u00E7a.
+            Feito pra quem tem mil coisas na cabeça.
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export default function LoginScreen({ onGoogleLogin, onEmailLogin, onEmailSignUp
         </form>
 
         <p className="text-center text-xs text-slate-400 mt-4">
-          {isSignUp ? "J\u00E1 tem conta?" : "N\u00E3o tem conta?"}{" "}
+          {isSignUp ? "Já tem conta?" : "Não tem conta?"}{" "}
           <button onClick={() => { setIsSignUp(!isSignUp); setError(""); setMessage(""); }}
             className="text-indigo-500 font-semibold hover:underline bg-transparent border-none cursor-pointer">
             {isSignUp ? "Entrar" : "Criar conta"}
