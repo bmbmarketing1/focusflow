@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #faf5ff 100%); min-height: 100vh; }
+@keyframes pulse-border { 0%,100% { border-color: #fca5a5; } 50% { border-color: #ef4444; } }
+.overdue-card { animation: pulse-border 2s infinite; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
